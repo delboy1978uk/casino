@@ -21,3 +21,6 @@ extras/documentation
 
 #ide
 .idea/
+
+#test output
+tests/_output
