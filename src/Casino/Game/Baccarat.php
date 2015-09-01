@@ -5,10 +5,10 @@
  * Time: 00:52
  */
 
-namespace Del\Casino\Table;
+namespace Del\Casino\Game;
 
 
-class Baccarat extends CardTableAbstract
+class Baccarat
 {
 
 }

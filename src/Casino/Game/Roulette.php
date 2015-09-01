@@ -5,7 +5,7 @@
  * Time: 00:52
  */
 
-namespace Del\Casino\Table;
+namespace Del\Casino\Game;
 
 
 class Roulette

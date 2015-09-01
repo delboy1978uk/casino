@@ -7,14 +7,37 @@
 
 namespace Del;
 
+use Del\Casino\Player;
+use Del\Casino\Game\Roulette;
 
 class Casino
 {
-    /**
-     * @return string
-     */
-    public function blah()
+    /** @var array $players */
+    protected $players;
+
+    public function __construct()
     {
-        return "Ready to start building tests";
+        $this->players = [];
+    }
+
+    /**
+     * @param $name
+     * @param $chips
+     * @return Player
+     */
+    public function createPlayer($name,$chips)
+    {
+        $player = new Player($name);
+        $player->addChips($chips);
+        $this->players[] = $player;
+        return $player;
+    }
+
+    /**
+     * @return Roulette
+     */
+    public function getRouletteTable()
+    {
+        return new Roulette();
     }
 }

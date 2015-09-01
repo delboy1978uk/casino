@@ -4,7 +4,7 @@
         {
         echo "\n\ncasino\n";
         echo "======================================\n\n";
-        echo "Usage: ./casino command\n\n";
+        echo "Usage: ./casino game strategy iterations\n\n";
         echo " \n";
         exit;
     }
@@ -13,10 +13,16 @@
 
     echo "\n";
 
-    use Del;
+    use Del\Casino;;
     try {
-        $btc = new Casino();
-        echo $btc->blah();
+        $casino = new Casino();
+        switch($argv[1])
+        {
+            case 'roulette':
+            default:
+                $game = $casino->getRouletteTable();
+                break;
+        }
     }
     catch(Exception $e){
         echo "There was a problem. \n".$e->getMessage()."\n\n";

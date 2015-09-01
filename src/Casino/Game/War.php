@@ -5,10 +5,10 @@
  * Time: 00:53
  */
 
-namespace Del\Casino\Table;
+namespace Del\Casino\Game;
 
 
-class War extends CardTableAbstract
+class War
 {
 
 }
