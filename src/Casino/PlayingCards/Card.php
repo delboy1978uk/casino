@@ -27,13 +27,13 @@ class Card
 
     public function __construct($suit, $value)
     {
-        $suits = array(
+        $suits = [
             'H' => 'Hearts',
             'C' => 'Clubs',
             'D' => 'Diamonds',
             'S' => 'Spades'
-        );
-        $values = array(
+        ];
+        $values = [
             'A' => 'Ace',
             '2' => 'Two',
             '3' => 'Three',
@@ -47,7 +47,7 @@ class Card
             'J' => 'Jack',
             'Q' => 'Queen',
             'K' => 'King'
-        );
+        ];
         $this->suit = $suit;
         $this->value = $value;
         $this->suit_text = $suits[$suit];

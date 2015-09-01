@@ -64,11 +64,18 @@ class Split extends TypeAbstract
         $splits = $this->getWinningSplits($num);
         $win = false;
         foreach($splits as $split){
-            if($this->split[0] == $split[0] && $this->split[1] == $split[1]){
+            if($this->checkSplit($split)){
                 $win = true;
             }
         }
         return $win;
+    }
+
+    private function checkSplit($winning_split){
+        if($this->split[0] == $winning_split[0] && $this->split[1] == $winning_split[1]){
+            return true;
+        }
+        return false;
     }
 
     /**
