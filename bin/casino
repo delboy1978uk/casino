@@ -13,14 +13,52 @@
 
     echo "\n";
 
-    use Del\Casino;;
+    use Del\Casino;
+    use Del\Casino\Strategy\Fibonacci;
+
     try {
         $casino = new Casino();
+        $del = $casino->createPlayer('Del',21);
+
+        $iterations = $argv[3];
+
+        switch($argv[2])
+        {
+            case 'fibonacci':
+            default:
+                $del->setStrategy(new Fibonacci());
+                break;
+        }
+
         switch($argv[1])
         {
             case 'roulette':
             default:
                 $game = $casino->getRouletteTable();
+                $z = 1;
+                for($x = 1; $x <= $iterations; $x ++){
+                    $y = 0;
+                    $high = $del->getBalance();
+                    while($del->getBalance() > 2){
+                        $y++;
+                        $amt = $del->getBalance() == 1 ? 1 : $del->getStrategy()->getRecommendedBet($del->getBalance());
+                        $game->nextPlayersTurn()->betRed($amt);
+                        $results = $game->spinWheel();
+                        $high = $del->getBalance() > $high ? $del->getBalance() : $high;
+//                        echo $results['num']."\n";
+                        if($del->getBalance() > 100000){
+                            break;
+                        }
+                    }
+                    if($del->getBalance() > 100000){
+                        echo "awesome, we became a millionaire after $y games. Highest balance was £$high.\n";
+                        $del->removeChips($del->getBalance());
+                    }
+                    else{
+                        echo "crap, we lost all our money after $y games. Highest balance was £$high.\n";
+                        $del->addChips(21);
+                    }
+                }
                 break;
         }
     }

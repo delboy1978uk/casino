@@ -30,7 +30,7 @@ class Casino
     {
         $player = new Player($name);
         $player->addChips($chips);
-        $this->players[] = $player;
+        $this->players[] = &$player;
         return $player;
     }
 

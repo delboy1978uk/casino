@@ -9,7 +9,6 @@ namespace Del\Casino\Game\Bet;
 
 use Del\Casino\Player;
 use Del\Casino\Game\Bet\Type\TypeAbstract as BetType;
-use Exception;
 
 class Roulette extends BetAbstract
 {
@@ -20,11 +19,6 @@ class Roulette extends BetAbstract
     }
 
 
-//            case 'number':
-//                $odds = 36;
-//                break;
-
-//                break;
 //            case 'street':
 //                $odds = 12;
 //                break;
@@ -42,11 +36,6 @@ class Roulette extends BetAbstract
 //                $odds = 3;
 //                break;
 //            case 'half':
-//            case 'even':
-//            case 'odd':
-//                $odds = 2;
-//                break;
-//            default:
 //                $odds = 2;
 //                break;
 

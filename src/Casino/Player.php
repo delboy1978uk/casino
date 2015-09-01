@@ -9,6 +9,7 @@ namespace Del\Casino;
 
 use ArrayObject;
 use Del\Casino\PlayingCards\Card;
+use Del\Casino\Strategy\StrategyInterface;
 
 
 class Player
@@ -16,6 +17,7 @@ class Player
     private $id;
     private $cards;
     private $chips;
+    private $strategy;
 
     /**
      * @param $id
@@ -109,4 +111,24 @@ class Player
     {
         return $amount < $this->getBalance();
     }
+
+    /**
+     * @param $strategy
+     * @return $this
+     */
+    public function setStrategy(StrategyInterface $strategy)
+    {
+        $this->strategy = $strategy;
+        return $this;
+    }
+
+    /**
+     * @return null|StrategyInterface
+     */
+    public function getStrategy()
+    {
+        return $this->strategy;
+    }
+
+
 }
