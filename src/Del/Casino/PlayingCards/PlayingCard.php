@@ -104,7 +104,7 @@ class Card
         $html = '<div id="'.$id.'" class="playing-card card-'
             .strtolower($this->getValue())
             .strtolower($this->getSuit()).' ';
-        if($this->facedown == true){$html .= 'playing-card-facedown ';}
+        if($this->facedown === true){$html .= 'playing-card-facedown ';}
         $html .= '"></div>';
         return $html;
     }
@@ -115,7 +115,7 @@ class Card
     public function getJson()
     {
         $class = 'playing-card card-'.strtolower($this->getValue()).strtolower($this->getSuit()).' ';
-        if($this->facedown == true){$class .= 'playing-card-facedown ';}
+        if($this->facedown === true){$class .= 'playing-card-facedown ';}
         $array = array(
             'suit' => $this->getSuit(),
             'value' => $this->getValue(),
