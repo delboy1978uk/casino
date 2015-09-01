@@ -8,22 +8,11 @@
 namespace Del\Casino;
 
 use Del\Casino\PlayingCards\Shoe;
-use Del\Casino\Banker;
-use ArrayObject;
 
 class CardTable extends Table
 {
     /** @var Shoe $shoe */
     protected $shoe;
-
-    /** @var \ArrayObject */
-    protected $players;
-
-    /** @var \Del\Casino\Banker */
-    protected $banker;
-
-    /** @var int */
-    protected $pot;
 
     /**
      * @param Shoe $shoe
