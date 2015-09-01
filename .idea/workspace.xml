@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e408c8e5-53fb-4a1e-b24f-0250ef40f98d" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Blank.php" afterPath="$PROJECT_DIR$/src/Casino.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/unit/Del/BlankTest.php" afterPath="$PROJECT_DIR$/tests/unit/Del/CasinoTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/phpbitcoin" afterPath="$PROJECT_DIR$/bin/phpbitcoin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Del/Casino/Table/Baccarat.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Del/Casino/Table/Blackjack.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Del/Casino/Table/CardTableAbstract.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Del/Casino/Player.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Del/Casino/Table/Roulette.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Del/Casino/Table/War.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="casino.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="e408c8e5-53fb-4a1e-b24f-0250ef40f98d" time="1441064477939" ignored="false" />
+    <file path="/Dummy.txt" changelist="e408c8e5-53fb-4a1e-b24f-0250ef40f98d" time="1441065291150" ignored="false" />
     <file path="/a.dummy" changelist="e408c8e5-53fb-4a1e-b24f-0250ef40f98d" time="1441064607674" ignored="false" />
+    <file path="/CardTableAbstract.php" changelist="e408c8e5-53fb-4a1e-b24f-0250ef40f98d" time="1441065482331" ignored="false" />
+    <file path="/Baccarat.php" changelist="e408c8e5-53fb-4a1e-b24f-0250ef40f98d" time="1441065494113" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +43,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CasinoTest.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CasinoTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/unit/Del/CasinoTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="18" selection-start="164" selection-end="164" vertical-scroll-proportion="0.2252816">
+            <state line="38" column="0" selection-start="626" selection-end="626" vertical-scroll-proportion="-23.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Casino.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Casino.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blackjack.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/Blackjack.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="41" selection-start="141" selection-end="141" vertical-scroll-proportion="-3.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Baccarat.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/Baccarat.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="14" selection-start="114" selection-end="140" vertical-scroll-proportion="-3.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="War.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/War.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="1" selection-start="140" selection-end="140" vertical-scroll-proportion="0.1689612">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Del/Casino/Player.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="1" selection-start="111" selection-end="111" vertical-scroll-proportion="-5.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardTableAbstract.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/CardTableAbstract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="9" selection-start="109" selection-end="109" vertical-scroll-proportion="-3.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Roulette.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/Roulette.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="-4.375">
               <folding />
             </state>
           </provider>
@@ -68,6 +135,15 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/tests/unit/Del/CasinoTest.php" />
+        <option value="$PROJECT_DIR$/tests/unit/Del/Casino/Table/Blackjack.php" />
+        <option value="$PROJECT_DIR$/tests/unit/Del/Casino/Table/Roulette.php" />
+        <option value="$PROJECT_DIR$/tests/unit/Del/Casino/Table/Baccarat.php" />
+        <option value="$PROJECT_DIR$/tests/unit/Del/Casino/Table/War.php" />
+        <option value="$PROJECT_DIR$/src/Del/Casino/Player.php" />
+        <option value="$PROJECT_DIR$/src/Del/Casino/Table/CardTableAbstract.php" />
+        <option value="$PROJECT_DIR$/src/Del/Casino/Table/Baccarat.php" />
+        <option value="$PROJECT_DIR$/src/Del/Casino/Table/Blackjack.php" />
+        <option value="$PROJECT_DIR$/src/Del/Casino/Table/War.php" />
       </list>
     </option>
   </component>
@@ -189,6 +265,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casino" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casino" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Del" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Casino" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casino" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casino" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Del" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Casino" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Table" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -305,8 +429,20 @@
       </server>
     </servers>
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Del" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -404,13 +540,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Casino.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0">
@@ -420,7 +549,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/unit/Del/CasinoTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="164" selection-end="164" vertical-scroll-proportion="0.2252816">
+        <state line="38" column="0" selection-start="626" selection-end="626" vertical-scroll-proportion="-23.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Casino.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/Roulette.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="-4.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Del/Casino/Player.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="1" selection-start="111" selection-end="111" vertical-scroll-proportion="-5.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/CardTableAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="9" selection-start="109" selection-end="109" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/Baccarat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="14" selection-start="114" selection-end="140" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/Blackjack.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="41" selection-start="141" selection-end="141" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Del/Casino/Table/War.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="1" selection-start="140" selection-end="140" vertical-scroll-proportion="0.1689612">
           <folding />
         </state>
       </provider>
