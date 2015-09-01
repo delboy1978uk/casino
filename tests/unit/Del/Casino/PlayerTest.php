@@ -3,6 +3,7 @@
 namespace Del\Casino;
 
 use Del\Casino\PlayingCards\Card;
+use ReflectionClass;
 
 class PlayerTest extends \Codeception\TestCase\Test
 {
@@ -67,7 +68,38 @@ class PlayerTest extends \Codeception\TestCase\Test
         $card = new Card('H','Q');
         $this->player->addCard($card);
         $this->assertEquals(3,count($this->player->getCards()));
-        $this->player->removeCard('QH');
+        $this->assertInstanceOf('Del\Casino\PlayingCards\Card',$this->player->removeCard('QH'));
         $this->assertEquals(2,count($this->player->getCards()));
+        //try and remove non existant card
+        $this->assertFalse($this->player->removeCard('JH'));
+        $this->assertEquals(2,count($this->player->getCards()));
+
+    }
+
+
+    public function testFundsCheck()
+    {
+        $this->player->addChips(500);
+        $this->assertFalse($this->invokeMethod($this->player,'fundsCheck',[600]));
+        $this->assertTrue($this->invokeMethod($this->player,'fundsCheck',[400]));
+    }
+
+
+    /**
+     * This method allows us to test protected and private methods without
+     * having to go through everything using public methods
+     *
+     * @param object &$object
+     * @param string $methodName
+     * @param array  $parameters
+     *
+     * @return mixed could return anything!.
+     */
+    public function invokeMethod(&$object, $methodName, array $parameters = array())
+    {
+        $reflection = new ReflectionClass(get_class($object));
+        $method = $reflection->getMethod($methodName);
+        $method->setAccessible(true);
+        return $method->invokeArgs($object, $parameters);
     }
 }

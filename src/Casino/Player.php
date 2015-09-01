@@ -103,13 +103,10 @@ class Player
 
     /**
      * @param $amount
-     * @throws Exception
+     * @return bool
      */
     protected function fundsCheck($amount)
     {
-        if($amount > $this->getBalance())
-        {
-            throw new Exception('Not enough chips');
-        }
+        return $amount < $this->getBalance();
     }
 }
