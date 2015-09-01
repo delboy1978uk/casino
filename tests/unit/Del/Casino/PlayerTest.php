@@ -3,6 +3,7 @@
 namespace Del\Casino;
 
 use Del\Casino\PlayingCards\Card;
+use Del\Casino\Strategy\Fibonacci;
 use ReflectionClass;
 
 class PlayerTest extends \Codeception\TestCase\Test
@@ -80,6 +81,13 @@ class PlayerTest extends \Codeception\TestCase\Test
         $this->player->addChips(500);
         $this->assertFalse($this->invokeMethod($this->player,'fundsCheck',[600]));
         $this->assertTrue($this->invokeMethod($this->player,'fundsCheck',[400]));
+    }
+
+
+    public function testGetAndSetStrategy()
+    {
+        $this->player->setStrategy(new Fibonacci());
+        $this->assertInstanceOf('Del\Casino\Strategy\Fibonacci',$this->player->getStrategy());
     }
 
 
