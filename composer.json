@@ -1,6 +1,6 @@
 {
-    "name": "delboy1978uk/phpbitcoin",
-    "description": "A casino project",
+    "name": "delboy1978uk/casino",
+    "description": "Casino simulation in PHP",
     "license": "MIT",
     "authors": [
         {
