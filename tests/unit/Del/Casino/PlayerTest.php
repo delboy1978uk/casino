@@ -19,14 +19,12 @@ class PlayerTest extends \Codeception\TestCase\Test
 
     protected function _before()
     {
-        // create a fresh casino class before each test
         $this->player = new Player('Del');
     }
 
     protected function _after()
     {
-        // unset the casino class after each test
-        unset($this->casino);
+        unset($this->player);
     }
 
     /**
