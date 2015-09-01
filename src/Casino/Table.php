@@ -104,7 +104,7 @@ class Table
      */
     public function removeFromPot($amount)
     {
-        $this->pot = $this->pot - $amount;
+        $this->pot = $this->pot - (int) $amount;
         return $this->pot;
     }
 

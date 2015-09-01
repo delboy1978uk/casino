@@ -52,11 +52,12 @@ class Player
     /**
      * Give it a value like AH for Ace of Hearts, 10D 10 of Diamonds etc
      * @param string $cardval
-     * @return Card
+     * @return Card|bool
      */
     public function removeCard($cardval)
     {
-        for($x = 0; $x < count($this->cards); $x ++)
+        $count = count($this->cards);
+        for($x = 0; $x < $count; $x ++)
         {
             if($this->cards[$x]->getValue().$this->cards[$x]->getSuit() == $cardval)
             {
