@@ -80,7 +80,7 @@ class Split extends TypeAbstract
         $winners = [];
         $row = $this->getRow($num);
         $col = $this->getCol($num);
-        if($col != 0)
+        if($col !== 0)
         {
             $winners[] = [$this->rows[$row][$col-1],$this->rows[$row][$col]];
         }
