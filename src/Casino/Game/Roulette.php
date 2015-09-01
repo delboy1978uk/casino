@@ -17,7 +17,11 @@ class Roulette extends Table
     private $bets = [];
 
     /** @var array */
-    private $result = [];
+    private $result = [
+        'num' => null,
+        'winners' => [],
+        'losers' => [],
+    ];
 
     /**
      * @return Turn
@@ -43,28 +47,23 @@ class Roulette extends Table
      */
     public function spinWheel()
     {
-        $num = (string) rand(0,36);
-        $results = [
-            'num' => $num,
-            'winners' => [],
-            'losers' => [],
-        ];
-        /** @param Bet $bet */
-        foreach($this->bets as $bet)
-        {
-            $result = $this->processBet($bet,$num);
-            if($result === true){
-                $results['winners'][] = $bet;
-            }
-            else{
-                $results['losers'][] = $bet;
-            }
-        }
-        $this->result = $results;
+        $results['num'] = $num = (string) rand(0,36);
+        $this->processBets($num);
         $this->payWinners();
         $this->payBanker();
         $this->resetTable();
         return $results;
+    }
+
+    private function processBets($num)
+    {
+        /** @param Bet $bet */
+        foreach($this->bets as $bet)
+        {
+            $result = $this->processBet($bet,$num);
+            $who = ($result === true) ? 'winners' : 'losers';
+            $this->result[$who][] = $bet;
+        }
     }
 
 
