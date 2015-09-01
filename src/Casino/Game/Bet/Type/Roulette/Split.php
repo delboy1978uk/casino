@@ -23,6 +23,9 @@ class Split extends TypeAbstract
     /** @var array */
     private $split;
 
+    /** @var array */
+    private $winners;
+
     public function __construct($num1,$num2)
     {
         if($num1 > $num2){
@@ -32,6 +35,7 @@ class Split extends TypeAbstract
         }
         $this->validateSplit($num1,$num2);
         $this->odds = 18;
+        $this->winners = [];
     }
 
     /**
@@ -61,17 +65,21 @@ class Split extends TypeAbstract
         if($num == 0){
             return false;
         }
-        $splits = $this->getWinningSplits($num);
-        $win = false;
-        foreach($splits as $split){
+        $this->getWinningSplits($num);
+        foreach($this->winners as $split){
             if($this->checkSplit($split)){
-                $win = true;
+                return true;
             }
         }
-        return $win;
+        return false;
     }
 
-    private function checkSplit($winning_split){
+    /**
+     * @param $winning_split
+     * @return bool
+     */
+    private function checkSplit($winning_split)
+    {
         if($this->split[0] == $winning_split[0] && $this->split[1] == $winning_split[1]){
             return true;
         }
@@ -84,33 +92,27 @@ class Split extends TypeAbstract
      */
     private function getWinningSplits($num)
     {
-        $winners = [];
-        $splits = $this->getSplitsForNumber($num);
-        $winners[] = $splits[0];
-        $winners[] = isset($splits[1]) ? $splits[1] : null;
-        return $winners;
-    }
-
-    /**
-     * @param $num
-     * @return array
-     */
-    private function getSplitsForNumber($num)
-    {
+        $this->winners = [];
         $row = $this->getRow($num);
         $col = $this->getCol($num);
-        $splits = [];
         if($col !== 0){
-            $val1 = $this->rows[$row][$col-1];
-            $val2 = $this->rows[$row][$col];
-            $splits[] = [$val1,$val2];
+            $col --;
         }
-        if($col !== 11){
-            $val1 = $this->rows[$row][$col];
-            $val2 = $this->rows[$row][$col + 1];
-            $splits[] = [$val1,$val2];
+        $this->addSplit($row, $col);
+        $col++;
+        $this->addSplit($row, $col);
+        return $this->winners;
+    }
+
+
+    private function addSplit($row,$col)
+    {
+        if($col == 11){
+            return null;
         }
-        return $splits;
+        $val1 = $this->rows[$row][$col];
+        $val2 = $this->rows[$row][$col + 1];
+        $this->winners[] = [$val1,$val2];
     }
 
     /**
