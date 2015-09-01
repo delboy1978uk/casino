@@ -58,10 +58,10 @@ class Player
     {
         for($x = 0; $x < count($this->cards); $x ++)
         {
-            if($this->cards[$x]->getValue.$this->cards[$x]->getSuit() == $cardval)
+            if($this->cards[$x]->getValue().$this->cards[$x]->getSuit() == $cardval)
             {
                 $card = $this->cards[$x];
-                $this->cards[$x] = null;
+                unset($this->cards[$x]);
                 return $card;
             }
         }
