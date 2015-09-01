@@ -18,7 +18,7 @@ class CardTable extends Table
      * @param Shoe $shoe
      * @param array $players
      */
-    public function __construct(Shoe $shoe, array $players)
+    public function __construct(Shoe $shoe, array &$players)
     {
         $this->setShoe($shoe);
         parent::__construct($players);

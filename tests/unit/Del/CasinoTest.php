@@ -26,20 +26,22 @@ class CasinoTest extends \Codeception\TestCase\Test
         unset($this->casino);
     }
 
-    /**
-     * Check tests are working
-     */
+
     public function testCreatePlayer()
     {
         $this->assertInstanceOf('Del\Casino\Player',$this->casino->createPlayer('Del',5000));
     }
 
-    /**
-     * Check tests are working
-     */
     public function testGetRouletteTable()
     {
+        $this->casino->createPlayer('Del',5000);
 	    $this->assertInstanceOf('Del\Casino\Game\Roulette',$this->casino->getRouletteTable());
+    }
+
+    public function testGetRouletteTableThrowsException()
+    {
+        $this->setExpectedException('Exception');
+        $this->casino->getRouletteTable();
     }
 
 

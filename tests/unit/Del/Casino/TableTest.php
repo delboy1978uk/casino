@@ -41,6 +41,22 @@ class TableTest extends \Codeception\TestCase\Test
         $this->assertInstanceOf('Del\Casino\Banker',$this->table->getBanker());
     }
 
+    public function testGetHistory()
+    {
+        $this->assertTrue(is_array($this->table->getHistory()));
+    }
+
+    public function testGetNextPlayer()
+    {
+        $this->table->addPlayer(new Player('Drunk Troublemaker'));
+        $this->assertInstanceOf('Del\Casino\Player',$this->table->getNextPlayer());
+        $this->assertInstanceOf('Del\Casino\Player',$this->table->getNextPlayer());
+        $this->assertNull($this->table->getNextPlayer());
+        $this->assertInstanceOf('Del\Casino\Player',$this->table->getNextPlayer());
+        $this->assertInstanceOf('Del\Casino\Player',$this->table->getNextPlayer());
+        $this->assertNull($this->table->getNextPlayer());
+    }
+
     public function testRemovePlayer()
     {
         $this->table->addPlayer(new Player('Drunk Troublemaker'));

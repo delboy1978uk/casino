@@ -10,6 +10,7 @@ namespace Del\Casino;
 use Del\Casino\Player;
 use Del\Casino\Banker;
 use ArrayObject;
+use ArrayIterator;
 
 
 class Table
@@ -18,33 +19,60 @@ class Table
     /** @var \ArrayObject */
     protected $players;
 
+    /** @var ArrayIterator */
+    protected $iterator;
+
     /** @var \Del\Casino\Banker */
     protected $banker;
 
     /** @var int */
     protected $pot;
 
+    /** @var array */
+    protected $history = [];
+
     /**
      * @param array $players
      */
-    public function __construct(array $players)
+    public function __construct(array &$players = null)
     {
         $this->players = new ArrayObject();
-        foreach($players as $player)
+        if($players)
         {
-            $this->addPlayer($player);
+            foreach($players as $player)
+            {
+                $this->addPlayer($player);
+            }
         }
         $this->banker = new Banker();
         $this->pot = 0;
     }
 
     /**
+     * @return Player|null
+     */
+    public function getNextPlayer()
+    {
+        if($this->iterator->valid()){
+            $player = $this->iterator->current();
+            $this->iterator->next();
+            return $player;
+        }
+        else
+        {
+            $this->iterator->rewind();
+            return null;
+        }
+    }
+
+    /**
      * Adds new Player
      * @param Player $player
      */
-    public function addPlayer(Player $player)
+    public function addPlayer(Player &$player)
     {
         $this->players->append($player);
+        $this->iterator = $this->players->getIterator();
     }
 
     /**
@@ -65,6 +93,7 @@ class Table
             $x++;
         }
         $i->rewind();
+        $this->iterator = $i;
     }
 
     /**
@@ -115,4 +144,14 @@ class Table
     {
         return $this->pot;
     }
+
+    /**
+     * @return array
+     */
+    public function getHistory()
+    {
+        return $this->history;
+    }
+
+
 }

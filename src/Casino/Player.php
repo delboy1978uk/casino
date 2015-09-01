@@ -8,7 +8,6 @@
 namespace Del\Casino;
 
 use ArrayObject;
-use Exception;
 use Del\Casino\PlayingCards\Card;
 
 

@@ -9,6 +9,7 @@ namespace Del;
 
 use Del\Casino\Player;
 use Del\Casino\Game\Roulette;
+use Exception;
 
 class Casino
 {
@@ -34,10 +35,23 @@ class Casino
     }
 
     /**
+     * @return bool
+     */
+    public function checkPlayerCount()
+    {
+        return count($this->players) > 0;
+    }
+
+    /**
      * @return Roulette
+     * @throws \Exception
      */
     public function getRouletteTable()
     {
-        return new Roulette();
+        if(!$this->checkPlayerCount())
+        {
+            throw new Exception('At least one Player object required. Use $casino->createPlayer($name,$chips) to add one.');
+        }
+        return new Roulette($this->players);
     }
 }
