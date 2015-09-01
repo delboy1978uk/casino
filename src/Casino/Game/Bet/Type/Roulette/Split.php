@@ -85,18 +85,28 @@ class Split extends TypeAbstract
     private function getWinningSplits($num)
     {
         $winners = [];
+        $splits = $this->getSplitsForNumber($num);
+        $winners[] = $splits[0];
+        $winners[] = isset($splits[1]) ? $splits[1] : null;
+        return $winners;
+    }
+
+    /**
+     * @param $num
+     * @return array
+     */
+    private function getSplitsForNumber($num)
+    {
         $row = $this->getRow($num);
         $col = $this->getCol($num);
+        $splits = [];
         if($col !== 0){
-            $split1 = [$this->rows[$row][$col-1],$this->rows[$row][$col]];
+            $splits[] = [$this->rows[$row][$col-1],$this->rows[$row][$col]];
         }
         if($col !== 11){
-            $split2 = [$this->rows[$row][$col],$this->rows[$row][$col+1]];
+            $splits[] = [$this->rows[$row][$col],$this->rows[$row][$col+1]];
         }
-
-        $winners[] = isset($split1) ? $split1 : null;
-        $winners[] = isset($split2) ? $split2 : null;
-        return $winners;
+        return $splits;
     }
 
     /**
