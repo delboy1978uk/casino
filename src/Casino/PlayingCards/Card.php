@@ -27,31 +27,8 @@ class Card
 
     public function __construct($suit, $value)
     {
-        $suits = [
-            'H' => 'Hearts',
-            'C' => 'Clubs',
-            'D' => 'Diamonds',
-            'S' => 'Spades'
-        ];
-        $values = [
-            'A' => 'Ace',
-            '2' => 'Two',
-            '3' => 'Three',
-            '4' => 'Four',
-            '5' => 'Five',
-            '6' => 'Six',
-            '7' => 'Seven',
-            '8' => 'Eight',
-            '9' => 'Nine',
-            '10' => 'Ten',
-            'J' => 'Jack',
-            'Q' => 'Queen',
-            'K' => 'King'
-        ];
         $this->suit = $suit;
         $this->value = $value;
-        $this->suit_text = $suits[$suit];
-        $this->value_text = $values[$value];
     }
 
     /**
@@ -75,7 +52,7 @@ class Card
      */
     public function getAsText()
     {
-        return $this->value_text.' of '.$this->suit_text;
+        return $this->getValueAsText().' of '.$this->getSuitAsText();
     }
 
     /**
@@ -83,7 +60,13 @@ class Card
      */
     public function getSuitAsText()
     {
-        return $this->suit_text;
+        $suits = [
+            'H' => 'Hearts',
+            'C' => 'Clubs',
+            'D' => 'Diamonds',
+            'S' => 'Spades'
+        ];
+        return $suits[$this->suit];
     }
 
     /**
@@ -91,7 +74,22 @@ class Card
      */
     public function getValueAsText()
     {
-        return $this->value_text;
+        $values = [
+            'A' => 'Ace',
+            '2' => 'Two',
+            '3' => 'Three',
+            '4' => 'Four',
+            '5' => 'Five',
+            '6' => 'Six',
+            '7' => 'Seven',
+            '8' => 'Eight',
+            '9' => 'Nine',
+            '10' => 'Ten',
+            'J' => 'Jack',
+            'Q' => 'Queen',
+            'K' => 'King'
+        ];
+        return $values[$this->value];
     }
 
     /**

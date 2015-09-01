@@ -101,10 +101,14 @@ class Split extends TypeAbstract
         $col = $this->getCol($num);
         $splits = [];
         if($col !== 0){
-            $splits[] = [$this->rows[$row][$col-1],$this->rows[$row][$col]];
+            $val1 = $this->rows[$row][$col-1];
+            $val2 = $this->rows[$row][$col];
+            $splits[] = [$val1,$val2];
         }
         if($col !== 11){
-            $splits[] = [$this->rows[$row][$col],$this->rows[$row][$col+1]];
+            $val1 = $this->rows[$row][$col];
+            $val2 = $this->rows[$row][$col + 1];
+            $splits[] = [$val1,$val2];
         }
         return $splits;
     }
