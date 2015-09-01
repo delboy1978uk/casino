@@ -2,13 +2,13 @@
 /**
  * User: delboy1978uk
  * Date: 01/09/15
- * Time: 00:57
+ * Time: 01:29
  */
 
 namespace Del\Casino\Table;
 
 
-abstract class CardTableAbstract extends TableAbstract
+class TableAbstract
 {
 
 }
